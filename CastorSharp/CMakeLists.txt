@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.6)
 project(CastorSharp)
 
+if(NOT SpicaInstall)
+    set(SpicaInstall ${CMAKE_SOURCE_DIR})
+endif(NOT SpicaInstall)
+
 set(CastorSharp_CSFLAGS
     "-optimize+"
     "-nowarn:1570,1572,1591"
@@ -29,5 +33,5 @@ add_custom_target(
     ${CMAKE_PROJECT_NAME}
     ALL DEPENDS ${CastorSharp_OUT})
 
-#install(FILES ${CastorSharp_OUT}
-#    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/)
+install(FILES ${CastorSharp_OUT}
+    DESTINATION ${SpicaInstall}/bin/)
