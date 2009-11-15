@@ -1,3 +1,6 @@
+#ifndef CASTOR_FIXED_H
+#define CASTOR_FIXED_H 1
+
 /*
 Copyright (c) 2006 Henry Strickland & Ryan Seto
 
@@ -22,7 +25,9 @@ OTHER DEALINGS IN THE SOFTWARE.
         (* http://www.opensource.org/licenses/mit-license.php *)
 */
 
-class Fixed {
+namespace castor {
+
+class fixed {
 
 private:
 
@@ -174,4 +179,7 @@ double& operator -=(double& a, const Fixed& b) { a = a - b; return a; }
 double& operator *=(double& a, const Fixed& b) { a = a * b; return a; }
 double& operator /=(double& a, const Fixed& b) { a = a / b; return a; }
 
+}
+
+#endif /* CASTOR_FIXED_H */
 
